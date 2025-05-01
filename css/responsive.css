@@ -192,4 +192,94 @@
     .card-content {
         padding: 1rem;
     }
-}
+}@media (max-width: 768px) {
+    /* Общие стили для формы */
+    .booking-form {
+      padding: 1rem !important;
+    }
+    
+    .form-row {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .form-group {
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Стили для подписей и полей ввода */
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+    
+    .input-container {
+      position: relative;
+      width: 100%;
+    }
+    
+    .input-with-icon {
+      position: relative;
+    }
+    
+    .input-with-icon .input-icon {
+      top: 50%;
+      transform: translateY(-50%);
+      left: 12px;
+    }
+    
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 16px 12px 40px !important;
+      font-size: 0.9rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      background-color: #fff;
+    }
+    
+    /* Особые стили для дат */
+    input[type="date"] {
+      padding: 12px 16px !important;
+      background-position: right 12px center;
+    }
+    
+    /* Кнопка смены направлений */
+    .swap-btn {
+      margin: 0.5rem 0;
+      align-self: center;
+      padding: 10px;
+      background: var(--primary-light);
+    }
+    
+    /* Выпадающие списки */
+    .form-group select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Дополнительные исправления для маленьких экранов */
+    .form-group label {
+      font-size: 0.75rem;
+    }
+    
+    .form-group input,
+    .form-group select {
+      padding: 10px 14px 10px 36px !important;
+      font-size: 0.85rem;
+    }
+    
+    .input-with-icon .input-icon {
+      left: 10px;
+      width: 16px;
+      height: 16px;
+    }
+  }
