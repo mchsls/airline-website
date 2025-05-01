@@ -3,333 +3,754 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyWings - Премиум авиаперевозки</title>
+    <title>SkyWings - Премиальные авиаперевозки</title>
+    <meta name="description" content="SkyWings - современная авиакомпания с маршрутами по всему миру. Бронируйте билеты онлайн, выбирайте места и наслаждайтесь комфортным перелётом.">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/logo.png" type="image/png">
 </head>
 <body>
-    <div class="airplane-animation"></div>
-    <div class="clouds-bg"></div>
-
-    <header id="mainHeader">
-        <div class="logo">
-            <img src="images/logo.png" alt="SkyWings Logo">
-            <span>SkyWings</span>
+    <!-- Background Animation -->
+    <div class="background-animation">
+        <div class="flying-plane"></div>
+        <div class="clouds"></div>
+    </div>
+    
+    <!-- Header -->
+    <header class="glass-header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="618TTMxIayL._AC_UL800_QL65_.jpeg" alt="SkyWings" class="logo" width="40" height="40">
+                <span class="logo-text">SkyWings</span>
+            </div>
+            
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#flights" class="nav-link">Рейсы</a></li>
+                    <li><a href="#services" class="nav-link">Услуги</a></li>
+                    <li><a href="#fleet" class="nav-link">Наш флот</a></li>
+                    <li><a href="#about" class="nav-link">О компании</a></li>
+                    <li><a href="#contacts" class="nav-link">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-actions">
+                <button class="btn-login">Войти</button>
+                <button class="btn-register">Регистрация</button>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Открыть меню">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#destinations">Направления</a></li>
-                <li><a href="#services">Услуги</a></li>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-                <li><a href="#" class="btn-outline"><i class="fas fa-user"></i> Войти</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1 class="animate__animated animate__fadeInDown">Откройте мир с SkyWings</h1>
-            <p class="animate__animated animate__fadeInDown animate__delay-1s">Премиальные авиаперевозки с непревзойденным комфортом и сервисом. Летайте с нами и получайте незабываемые впечатления.</p>
-            <a href="#search" class="btn animate__animated animate__fadeInUp animate__delay-2s">Найти рейс <i class="fas fa-search"></i></a>
-        </div>
-        <div class="scroll-down animate__animated animate__bounce animate__delay-3s animate__infinite">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <div class="container">
-        <form id="searchForm" class="search-form animate__animated animate__fadeInUp animate__delay-1s">
-            <div class="form-tabs">
-                <button type="button" class="tab active">Рейсы</button>
-                <button type="button" class="tab">Гостиницы</button>
-                <button type="button" class="tab">Аренда авто</button>
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="from"><i class="fas fa-plane-departure"></i> Откуда</label>
-                    <input type="text" id="from" class="form-control" placeholder="Город или аэропорт">
-                </div>
-                <div class="form-group">
-                    <label for="to"><i class="fas fa-plane-arrival"></i> Куда</label>
-                    <input type="text" id="to" class="form-control" placeholder="Город или аэропорт">
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="departure"><i class="far fa-calendar-alt"></i> Туда</label>
-                    <input type="date" id="departure" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="return"><i class="far fa-calendar-alt"></i> Обратно</label>
-                    <input type="date" id="return" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="passengers"><i class="fas fa-users"></i> Пассажиры</label>
-                    <div class="passengers-select">
-                        <button type="button" class="passenger-btn minus"><i class="fas fa-minus"></i></button>
-                        <input type="number" id="passengers" class="form-control" value="1" min="1" max="9">
-                        <button type="button" class="passenger-btn plus"><i class="fas fa-plus"></i></button>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Откройте мир с SkyWings</h1>
+                    <p class="hero-subtitle">Более 250 направлений в 80 странах мира</p>
+                    
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <div class="stat-number">15M+</div>
+                            <div class="stat-label">Пассажиров в год</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98%</div>
+                            <div class="stat-label">Пунктуальность</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.9★</div>
+                            <div class="stat-label">Рейтинг сервиса</div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="class"><i class="fas fa-chair"></i> Класс</label>
-                    <select id="class" class="form-control">
-                        <option value="economy">Эконом</option>
-                        <option value="business">Бизнес</option>
-                        <option value="first">Первый</option>
-                    </select>
+                
+                <!-- Booking Widget -->
+                <div class="booking-widget glass-card">
+                    <div class="booking-tabs">
+                        <button class="tab-btn active" data-tab="flights">Рейсы</button>
+                        <button class="tab-btn" data-tab="deals">Горящие предложения</button>
+                        <button class="tab-btn" data-tab="business">Бизнес-класс</button>
+                    </div>
+                    
+                    <form id="flight-search" class="booking-form active" data-tab="flights">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="from">Откуда</label>
+                                <div class="input-with-icon">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 12.5C13.6569 12.5 15 11.1569 15 9.5C15 7.84315 13.6569 6.5 12 6.5C10.3431 6.5 9 7.84315 9 9.5C9 11.1569 10.3431 12.5 12 12.5Z" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M12 22C14 18 20 15.4183 20 10C20 5.58172 16.4183 2 12 2C7.58172 2 4 5.58172 4 10C4 15.4183 10 18 12 22Z" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                    <input type="text" id="from" placeholder="Город или аэропорт" list="airports" required>
+                                </div>
+                                <datalist id="airports">
+                                    <option value="Москва (SVO)">
+                                    <option value="Санкт-Петербург (LED)">
+                                    <option value="Новосибирск (OVB)">
+                                    <option value="Екатеринбург (SVX)">
+                                    <option value="Казань (KZN)">
+                                    <option value="Сочи (AER)">
+                                    <option value="Краснодар (KRR)">
+                                    <option value="Владивосток (VVO)">
+                                </datalist>
+                            </div>
+                            
+                            <button type="button" class="swap-btn" aria-label="Поменять направления">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 17L21 12L16 7M21 12H3M8 7L3 12L8 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            
+                            <div class="form-group">
+                                <label for="to">Куда</label>
+                                <div class="input-with-icon">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 12.5C13.6569 12.5 15 11.1569 15 9.5C15 7.84315 13.6569 6.5 12 6.5C10.3431 6.5 9 7.84315 9 9.5C9 11.1569 10.3431 12.5 12 12.5Z" stroke="currentColor" stroke-width="1.5"/>
+                                        <path d="M12 22C14 18 20 15.4183 20 10C20 5.58172 16.4183 2 12 2C7.58172 2 4 5.58172 4 10C4 15.4183 10 18 12 22Z" stroke="currentColor" stroke-width="1.5"/>
+                                    </svg>
+                                    <input type="text" id="to" placeholder="Город или аэропорт" list="airports" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="departure">Туда</label>
+                                <div class="input-with-icon">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <input type="date" id="departure" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="return">Обратно</label>
+                                <div class="input-with-icon">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 9H21M7 3V5M17 3V5M6 13H8M6 17H8M11 13H13M11 17H13M16 13H18M16 17H18M6.2 21H17.8C18.9201 21 19.4802 21 19.908 20.782C20.2843 20.5903 20.5903 20.2843 20.782 19.908C21 19.4802 21 18.9201 21 17.8V8.2C21 7.07989 21 6.51984 20.782 6.09202C20.5903 5.71569 20.2843 5.40973 19.908 5.21799C19.4802 5 18.9201 5 17.8 5H6.2C5.0799 5 4.51984 5 4.09202 5.21799C3.71569 5.40973 3.40973 5.71569 3.21799 6.09202C3 6.51984 3 7.07989 3 8.2V17.8C3 18.9201 3 19.4802 3.21799 19.908C3.40973 20.2843 3.71569 20.5903 4.09202 20.782C4.51984 21 5.07989 21 6.2 21Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <input type="date" id="return">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="passengers">Пассажиры</label>
+                                <div class="input-with-icon">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 19.5C17 21.433 15.433 23 13.5 23C11.567 23 10 21.433 10 19.5M21 16.5C21 18.433 19.433 20 17.5 20C15.567 20 14 18.433 14 16.5M3 16.5C3 18.433 4.567 20 6.5 20C8.433 20 10 18.433 10 16.5M14 7.5C14 9.433 12.433 11 10.5 11C8.567 11 7 9.433 7 7.5C7 5.567 8.567 4 10.5 4C12.433 4 14 5.567 14 7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <select id="passengers">
+                                        <option value="1">1 пассажир</option>
+                                        <option value="2">2 пассажира</option>
+                                        <option value="3">3 пассажира</option>
+                                        <option value="4">4 пассажира</option>
+                                        <option value="family">Семья (2+2)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="class">Класс</label>
+                                <div class="input-with-icon">
+                                    <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 21H15M9 4H15M9 4V8C9 9.65685 10.3431 11 12 11C13.6569 11 15 9.65685 15 8V4M9 4V3M15 4V3M12 11V14M12 21V14M12 14H9.5C8.11929 14 7 15.1193 7 16.5V18C7 19.1046 7.89543 20 9 20H15C16.1046 20 17 19.1046 17 18V16.5C17 15.1193 15.8807 14 14.5 14H12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <select id="class">
+                                        <option value="economy">Эконом</option>
+                                        <option value="comfort">Комфорт</option>
+                                        <option value="business">Бизнес</option>
+                                        <option value="first">Первый</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">
+                            <span>Найти рейсы</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                    
+                    <!-- Deals Tab Content -->
+                    <form id="deals-search" class="booking-form" data-tab="deals">
+                        <!-- Similar form structure for deals -->
+                        <div class="deals-message">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 14L11 16L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#0066cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <h3>Горящие предложения</h3>
+                            <p>Подпишитесь на уведомления, чтобы получать лучшие предложения первыми</p>
+                            <div class="form-group">
+                                <input type="email" placeholder="Ваш email" required>
+                            </div>
+                            <button type="submit" class="btn-primary">Подписаться</button>
+                        </div>
+                    </form>
+                    
+                    <!-- Business Tab Content -->
+                    <form id="business-search" class="booking-form" data-tab="business">
+                        <!-- Similar form structure for business class -->
+                        <div class="business-message">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="#0066cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M19.4 15C19.2669 15.3016 19.227 15.6363 19.2863 15.9605C19.3455 16.2847 19.5006 16.5819 19.7275 16.8085C19.9544 17.0351 20.2517 17.1899 20.576 17.2489C20.9003 17.3079 21.2351 17.2679 21.5366 17.1346C22.4876 16.6978 23.3094 16.0309 23.9166 15.2C24.5238 14.3691 24.8946 13.4039 24.9896 12.3959C25.0846 11.3879 24.9003 10.3739 24.4566 9.46291C24.0129 8.55195 23.3269 7.77891 22.4733 7.22868C21.6197 6.67845 20.6314 6.37207 19.62 6.34491C18.6086 6.31774 17.6132 6.57091 16.7333 7.07691C16.4654 7.23291 16.2453 7.46491 16.1013 7.74491C15.9573 8.02491 15.8959 8.34091 15.9246 8.65491C15.9533 8.96891 16.0706 9.26691 16.26 9.51091L16.41 9.70491C16.5893 9.93691 16.6999 10.2169 16.7266 10.5109C16.7533 10.8049 16.6953 11.0989 16.56 11.3569C16.4246 11.6149 16.2179 11.8249 15.9666 11.9589C15.7153 12.0929 15.4313 12.1449 15.15 12.1069C14.8686 12.0689 14.6039 11.9429 14.3933 11.7469C14.1826 11.5509 14.0366 11.2949 13.9766 11.0149C13.9166 10.7349 13.9453 10.4449 14.0586 10.1829C14.172 9.92091 14.3639 9.70091 14.6066 9.55491C15.3166 9.12491 15.5253 8.20691 15.0666 7.55491C15.8246 6.89091 16.7533 6.44491 17.7533 6.27091C18.7533 6.09691 19.7813 6.20291 20.7133 6.57491C21.6453 6.94691 22.4419 7.56691 23.0066 8.35491C23.5713 9.14291 23.8786 10.0629 23.8919 11.0089C23.9053 11.9549 23.6239 12.8829 23.0846 13.6849C22.5453 14.4869 21.7733 15.1269 20.8633 15.5249C20.5353 15.6769 20.1666 15.7169 19.8146 15.6389C19.4626 15.5609 19.1486 15.3689 18.9246 15.0949C18.7006 14.8209 18.5813 14.4829 18.5866 14.1349C18.5919 13.7869 18.7213 13.4529 18.9533 13.1869C19.1853 12.9209 19.5039 12.7409 19.85 12.6809C20.196 12.6209 20.5466 12.6849 20.8433 12.8609C21.14 13.0369 21.3619 13.3129 21.4666 13.6369C21.5713 13.9609 21.5513 14.3109 21.41 14.6209" stroke="#0066cc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <h3>Бизнес-класс</h3>
+                            <p>Для бронирования бизнес-класса или получения индивидуального предложения свяжитесь с нашим консьерж-сервисом</p>
+                            <button type="button" class="btn-outline">Заказать звонок</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <button type="submit" class="btn search-btn">
-                <i class="fas fa-search"></i> Найти рейсы
-                <span class="loading-spinner hidden"><i class="fas fa-spinner fa-spin"></i></span>
-            </button>
-        </form>
-    </div>
-
-    <section id="destinations" class="destinations">
-        <h2 class="section-title animate-on-scroll">Популярные направления</h2>
-        <div class="destinations-grid">
-            <div class="destination-card animate-on-scroll">
-                <div class="card-badge">Хит продаж</div>
-                <img src="images/destinations/paris.jpg" alt="Paris" class="destination-img">
-                <div class="destination-info">
-                    <h3>Париж, Франция</h3>
-                    <p><i class="fas fa-plane"></i> Прямые рейсы из Москвы</p>
-                    <p><i class="fas fa-clock"></i> 3ч 45мин в пути</p>
-                    <div class="price">от 25 000 ₽</div>
-                    <button class="btn-outline">Подробнее</button>
-                </div>
-            </div>
-            <div class="destination-card animate-on-scroll">
-                <img src="images/destinations/newyork.jpg" alt="New York" class="destination-img">
-                <div class="destination-info">
-                    <h3>Нью-Йорк, США</h3>
-                    <p><i class="fas fa-plane"></i> С пересадкой в Лондоне</p>
-                    <p><i class="fas fa-clock"></i> 12ч 30мин в пути</p>
-                    <div class="price">от 45 000 ₽</div>
-                    <button class="btn-outline">Подробнее</button>
-                </div>
-            </div>
-            <div class="destination-card animate-on-scroll">
-                <div class="card-badge">Акция</div>
-                <img src="images/destinations/tokyo.jpg" alt="Tokyo" class="destination-img">
-                <div class="destination-info">
-                    <h3>Токио, Япония</h3>
-                    <p><i class="fas fa-plane"></i> Прямые рейсы из Владивостока</p>
-                    <p><i class="fas fa-clock"></i> 8ч 15мин в пути</p>
-                    <div class="price">от 38 000 ₽ <span class="old-price">42 000 ₽</span></div>
-                    <button class="btn-outline">Подробнее</button>
-                </div>
-            </div>
-            <div class="destination-card animate-on-scroll">
-                <img src="images/destinations/sydney.jpg" alt="Sydney" class="destination-img">
-                <div class="destination-info">
-                    <h3>Сидней, Австралия</h3>
-                    <p><i class="fas fa-plane"></i> С пересадкой в Сингапуре</p>
-                    <p><i class="fas fa-clock"></i> 18ч 40мин в пути</p>
-                    <div class="price">от 52 000 ₽</div>
-                    <button class="btn-outline">Подробнее</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <h2 class="section-title animate-on-scroll">Наши услуги</h2>
-        <div class="services-grid">
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon"><i class="fas fa-suitcase-rolling"></i></div>
-                <h3>Дополнительный багаж</h3>
-                <p>Увеличьте норму провоза багажа для вашего комфорта</p>
-            </div>
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon"><i class="fas fa-utensils"></i></div>
-                <h3>Специальное питание</h3>
-                <p>Выберите меню по вашему вкусу и диетическим потребностям</p>
-            </div>
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon"><i class="fas fa-car"></i></div>
-                <h3>Трансфер из аэропорта</h3>
-                <p>Встреча в аэропорту и комфортный трансфер до отеля</p>
-            </div>
-            <div class="service-card animate-on-scroll">
-                <div class="service-icon"><i class="fas fa-bed"></i></div>
-                <h3>Отели у партнеров</h3>
-                <p>Специальные цены на отели для наших пассажиров</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="seatSelection" class="seat-selection">
-        <div class="airplane">
-            <div class="airplane-header">
-                <div class="flight-info">
-                    <h2>Рейс SW-256</h2>
-                    <p><i class="fas fa-plane-departure"></i> Москва (SVO) → <i class="fas fa-plane-arrival"></i> Париж (CDG)</p>
-                    <p><i class="far fa-calendar-alt"></i> 12 июня 2023, <i class="far fa-clock"></i> 08:45 - 11:15</p>
-                    <p><i class="fas fa-chair"></i> Класс: Эконом</p>
-                </div>
-                <div class="price-summary">
-                    <div class="total-price">25 000 ₽</div>
-                    <div class="selected-seats" id="selectedSeatsInfo">Выбрано мест: 0</div>
-                </div>
-            </div>
-            <div class="airplane-body">
-                <div class="seat-map">
-                    <h3>Выберите места</h3>
-                    <div class="seat-rows" id="seatMap">
-                        <!-- Сгенерируем места с помощью JavaScript -->
+        </section>
+        
+        <!-- Popular Destinations -->
+        <section id="flights" class="section-popular">
+            <div class="container">
+                <h2 class="section-title">Популярные направления</h2>
+                <p class="section-subtitle">Куда летим в этом сезоне?</p>
+                
+                <div class="destinations-grid">
+                    <div class="destination-card">
+                        <div class="card-image" style="background-image: url('images/destinations/dubai.jpg')">
+                            <div class="price-badge">от 25 000 ₽</div>
+                            <div class="flight-duration">5 ч 10 мин</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Дубай, ОАЭ</h3>
+                            <div class="destination-info">
+                                <div class="info-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Ежедневные рейсы</span>
+                                </div>
+                                <div class="info-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 21H15M9 4H15M9 4V8C9 9.65685 10.3431 11 12 11C13.6569 11 15 9.65685 15 8V4M9 4V3M15 4V3M12 11V14M12 21V14M12 14H9.5C8.11929 14 7 15.1193 7 16.5V18C7 19.1046 7.89543 20 9 20H15C16.1046 20 17 19.1046 17 18V16.5C17 15.1193 15.8807 14 14.5 14H12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Сезон: круглый год</span>
+                                </div>
+                            </div>
+                            <p class="destination-description">Роскошные отели, золотые пляжи и самые высокие небоскрёбы мира ждут вас в Дубае.</p>
+                            <div class="card-footer">
+                                <button class="btn-outline">Выбрать рейс</button>
+                                <div class="rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="reviews">1,240 отзывов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Paris -->
+                    <div class="destination-card">
+                        <div class="card-image" style="background-image: url('images/destinations/paris.jpg')">
+                            <div class="price-badge">от 18 000 ₽</div>
+                            <div class="flight-duration">3 ч 50 мин</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Париж, Франция</h3>
+                            <div class="destination-info">
+                                <div class="info-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>2-3 рейса в день</span>
+                                </div>
+                                <div class="info-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 21H15M9 4H15M9 4V8C9 9.65685 10.3431 11 12 11C13.6569 11 15 9.65685 15 8V4M9 4V3M15 4V3M12 11V14M12 21V14M12 14H9.5C8.11929 14 7 15.1193 7 16.5V18C7 19.1046 7.89543 20 9 20H15C16.1046 20 17 19.1046 17 18V16.5C17 15.1193 15.8807 14 14.5 14H12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Лучший сезон: весна</span>
+                                </div>
+                            </div>
+                            <p class="destination-description">Романтика, искусство и изысканная кухня - Париж покорит ваше сердце с первого взгляда.</p>
+                            <div class="card-footer">
+                                <button class="btn-outline">Выбрать рейс</button>
+                                <div class="rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="reviews">980 отзывов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tokyo -->
+                    <div class="destination-card">
+                        <div class="card-image" style="background-image: url('images/destinations/tokyo.jpg')">
+                            <div class="price-badge">от 32 000 ₽</div>
+                            <div class="flight-duration">9 ч 20 мин</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Токио, Япония</h3>
+                            <div class="destination-info">
+                                <div class="info-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Ежедневные рейсы</span>
+                                </div>
+                                <div class="info-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 21H15M9 4H15M9 4V8C9 9.65685 10.3431 11 12 11C13.6569 11 15 9.65685 15 8V4M9 4V3M15 4V3M12 11V14M12 21V14M12 14H9.5C8.11929 14 7 15.1193 7 16.5V18C7 19.1046 7.89543 20 9 20H15C16.1046 20 17 19.1046 17 18V16.5C17 15.1193 15.8807 14 14.5 14H12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Лучший сезон: весна/осень</span>
+                                </div>
+                            </div>
+                            <p class="destination-description">Уникальное сочетание традиций и высоких технологий в самом динамичном городе мира.</p>
+                            <div class="card-footer">
+                                <button class="btn-outline">Выбрать рейс</button>
+                                <div class="rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="reviews">890 отзывов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- New York -->
+                    <div class="destination-card">
+                        <div class="card-image" style="background-image: url('images/destinations/newyork.jpg')">
+                            <div class="price-badge">от 35 000 ₽</div>
+                            <div class="flight-duration">10 ч 30 мин</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Нью-Йорк, США</h3>
+                            <div class="destination-info">
+                                <div class="info-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>5 рейсов в неделю</span>
+                                </div>
+                                <div class="info-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 21H15M9 4H15M9 4V8C9 9.65685 10.3431 11 12 11C13.6569 11 15 9.65685 15 8V4M9 4V3M15 4V3M12 11V14M12 21V14M12 14H9.5C8.11929 14 7 15.1193 7 16.5V18C7 19.1046 7.89543 20 9 20H15C16.1046 20 17 19.1046 17 18V16.5C17 15.1193 15.8807 14 14.5 14H12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Лучший сезон: осень</span>
+                                </div>
+                            </div>
+                            <p class="destination-description">Город, который никогда не спит, предлагает невероятные впечатления для каждого.</p>
+                            <div class="card-footer">
+                                <button class="btn-outline">Выбрать рейс</button>
+                                <div class="rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="reviews">1,150 отзывов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- London -->
+                    <div class="destination-card">
+                        <div class="card-image" style="background-image: url('images/destinations/london.jpg')">
+                            <div class="price-badge">от 20 000 ₽</div>
+                            <div class="flight-duration">4 ч 10 мин</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Лондон, Великобритания</h3>
+                            <div class="destination-info">
+                                <div class="info-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>3-4 рейса в день</span>
+                                </div>
+                                <div class="info-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 21H15M9 4H15M9 4V8C9 9.65685 10.3431 11 12 11C13.6569 11 15 9.65685 15 8V4M9 4V3M15 4V3M12 11V14M12 21V14M12 14H9.5C8.11929 14 7 15.1193 7 16.5V18C7 19.1046 7.89543 20 9 20H15C16.1046 20 17 19.1046 17 18V16.5C17 15.1193 15.8807 14 14.5 14H12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Лучший сезон: лето</span>
+                                </div>
+                            </div>
+                            <p class="destination-description">Королевская история, современное искусство и неповторимая атмосфера британской столицы.</p>
+                            <div class="card-footer">
+                                <button class="btn-outline">Выбрать рейс</button>
+                                <div class="rating">
+                                    <span class="stars">★★★★☆</span>
+                                    <span class="reviews">920 отзывов</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Sydney -->
+                    <div class="destination-card">
+                        <div class="card-image" style="background-image: url('images/destinations/sydney.jpg')">
+                            <div class="price-badge">от 45 000 ₽</div>
+                            <div class="flight-duration">20 ч 15 мин</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Сидней, Австралия</h3>
+                            <div class="destination-info">
+                                <div class="info-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>3 рейса в неделю</span>
+                                </div>
+                                <div class="info-item">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9 21H15M9 4H15M9 4V8C9 9.65685 10.3431 11 12 11C13.6569 11 15 9.65685 15 8V4M9 4V3M15 4V3M12 11V14M12 21V14M12 14H9.5C8.11929 14 7 15.1193 7 16.5V18C7 19.1046 7.89543 20 9 20H15C16.1046 20 17 19.1046 17 18V16.5C17 15.1193 15.8807 14 14.5 14H12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Лучший сезон: декабрь-февраль</span>
+                                </div>
+                            </div>
+                            <p class="destination-description">Солнце, океан и уникальная природа Австралии - идеальное место для незабываемого отдыха.</p>
+                            <div class="card-footer">
+                                <button class="btn-outline">Выбрать рейс</button>
+                                <div class="rating">
+                                    <span class="stars">★★★★★</span>
+                                    <span class="reviews">760 отзывов</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="seat-legend">
-                    <h3>Легенда</h3>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background-color: #e0e0e0;"></div>
-                        <span>Свободно</span>
+                
+                <div class="section-footer">
+                    <button class="btn-outline">Все направления</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Our Fleet -->
+        <section id="fleet" class="section-fleet">
+            <div class="container">
+                <h2 class="section-title">Наш флот</h2>
+                <p class="section-subtitle">Современные и комфортабельные самолеты</p>
+                
+                <div class="fleet-carousel">
+                    <div class="fleet-item">
+                        <div class="fleet-image" style="background-image: url('images/aircrafts/boeing787.jpg')"></div>
+                        <div class="fleet-content">
+                            <h3>Boeing 787-9 Dreamliner</h3>
+                            <div class="fleet-specs">
+                                <div class="spec-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Дальность: 14,140 км</span>
+                                </div>
+                                <div class="spec-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 19.5C17 21.433 15.433 23 13.5 23C11.567 23 10 21.433 10 19.5M21 16.5C21 18.433 19.433 20 17.5 20C15.567 20 14 18.433 14 16.5M3 16.5C3 18.433 4.567 20 6.5 20C8.433 20 10 18.433 10 16.5M14 7.5C14 9.433 12.433 11 10.5 11C8.567 11 7 9.433 7 7.5C7 5.567 8.567 4 10.5 4C12.433 4 14 5.567 14 7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <span>Пассажиры: 296</span>
+                                </div>
+                                <div class="spec-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 15H21M5 15L6.61333 4.93333C6.80378 3.35873 8.14338 2.16667 9.728 2.16667H14.272C15.8566 2.16667 17.1962 3.35873 17.3867 4.93333L19 15M5 15V20C5 20.5523 5.44772 21 6 21H8M19 15V20C19 20.5523 18.5523 21 18 21H16M8 21C8 22.1046 8.89543 23 10 23C11.1046 23 12 22.1046 12 21M16 21C16 22.1046 16.8954 23 18 23C19.1046 23 20 22.1046 20 21M12 21C12 22.1046 12.8954 23 14 23C15.1046 23 16 22.1046 16 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Крейсерская скорость: 903 км/ч</span>
+                                </div>
+                            </div>
+                            <p class="fleet-description">Dreamliner предлагает беспрецедентный комфорт благодаря увеличенным иллюминаторам, улучшенной системе подачи воздуха и пониженному уровню шума.</p>
+                            <div class="fleet-classes">
+                                <div class="class-badge business">Бизнес (34 места)</div>
+                                <div class="class-badge comfort">Комфорт (64 места)</div>
+                                <div class="class-badge economy">Эконом (198 мест)</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background-color: #0066cc;"></div>
-                        <span>Выбрано</span>
+                    
+                    <!-- Airbus A350 -->
+                    <div class="fleet-item">
+                        <div class="fleet-image" style="background-image: url('images/aircrafts/airbus350.jpg')"></div>
+                        <div class="fleet-content">
+                            <h3>Airbus A350-900</h3>
+                            <div class="fleet-specs">
+                                <div class="spec-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Дальность: 15,000 км</span>
+                                </div>
+                                <div class="spec-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 19.5C17 21.433 15.433 23 13.5 23C11.567 23 10 21.433 10 19.5M21 16.5C21 18.433 19.433 20 17.5 20C15.567 20 14 18.433 14 16.5M3 16.5C3 18.433 4.567 20 6.5 20C8.433 20 10 18.433 10 16.5M14 7.5C14 9.433 12.433 11 10.5 11C8.567 11 7 9.433 7 7.5C7 5.567 8.567 4 10.5 4C12.433 4 14 5.567 14 7.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                    </svg>
+                                    <span>Пассажиры: 324</span>
+                                </div>
+                                <div class="spec-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 15H21M5 15L6.61333 4.93333C6.80378 3.35873 8.14338 2.16667 9.728 2.16667H14.272C15.8566 2.16667 17.1962 3.35873 17.3867 4.93333L19 15M5 15V20C5 20.5523 5.44772 21 6 21H8M19 15V20C19 20.5523 18.5523 21 18 21H16M8 21C8 22.1046 8.89543 23 10 23C11.1046 23 12 22.1046 12 21M16 21C16 22.1046 16.8954 23 18 23C19.1046 23 20 22.1046 20 21M12 21C12 22.1046 12.8954 23 14 23C15.1046 23 16 22.1046 16 21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Крейсерская скорость: 903 км/ч</span>
+                                </div>
+                            </div>
+                            <p class="fleet-description">A350 устанавливает новые стандарты комфорта и эффективности с самыми тихими салонами в своем классе и инновационной системой освещения.</p>
+                            <div class="fleet-classes">
+                                <div class="class-badge business">Бизнес (36 мест)</div>
+                                <div class="class-badge comfort">Комфорт (72 места)</div>
+                                <div class="class-badge economy">Эконом (216 мест)</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background-color: #ff3b30;"></div>
-                        <span>Занято</span>
+                    
+                    <!-- Embraer 190 -->
+                    <div class="fleet-item">
+                        <div class="fleet-image" style="background-image: url('images/aircrafts/embraer190.jpg')"></div>
+                        <div class="fleet-content">
+                            <h3>Embraer 190</h3>
+                            <div class="fleet-specs">
+                                <div class="spec-item">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 6V12L16 14M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Дальность: 4,448 км</span>
+                                </div>
+                                <div class="time-zone-card">
+                                    <div class="city">Дубай</div>
+                                    <div class="time" data-timezone="Asia/Dubai">--:-- --</div>
+                                    <div class="airport">DXB, DWC</div>
+                                    <div class="date" data-timezone="Asia/Dubai">1 января 2023</div>
+                                    <div class="weather">+32°C, солнечно</div>
+                                </div>
+                                
+                                <div class="time-zone-card">
+                                    <div class="city">Нью-Йорк</div>
+                                    <div class="time" data-timezone="America/New_York">--:-- --</div>
+                                    <div class="airport">JFK, EWR</div>
+                                    <div class="date" data-timezone="America/New_York">1 января 2023</div>
+                                    <div class="weather">+22°C, облачно</div>
+                                </div>
+                                
+                                <div class="time-zone-card">
+                                    <div class="city">Лондон</div>
+                                    <div class="time" data-timezone="Europe/London">--:-- --</div>
+                                    <div class="airport">LHR, LGW</div>
+                                    <div class="date" data-timezone="Europe/London">1 января 2023</div>
+                                    <div class="weather">+18°C, дождь</div>
+                                </div>
+                                
+                                <div class="time-zone-card">
+                                    <div class="city">Токио</div>
+                                    <div class="time" data-timezone="Asia/Tokyo">--:-- --</div>
+                                    <div class="airport">HND, NRT</div>
+                                    <div class="date" data-timezone="Asia/Tokyo">1 января 2023</div>
+                                    <div class="weather">+25°C, ясно</div>
+                                </div>
+                                
+                                <div class="time-zone-card">
+                                    <div class="city">Сидней</div>
+                                    <div class="time" data-timezone="Australia/Sydney">--:-- --</div>
+                                    <div class="airport">SYD</div>
+                                    <div class="date" data-timezone="Australia/Sydney">1 января 2023</div>
+                                    <div class="weather">+20°C, переменная облачность</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!-- Special Offers -->
+                    <section class="section-offers">
+                        <div class="container">
+                            <h2 class="section-title">Специальные предложения</h2>
+                            <p class="section-subtitle">Выгодные тарифы и акции</p>
+                            
+                            <div class="offers-grid">
+                                <div class="offer-card">
+                                    <div class="offer-badge">Акция</div>
+                                    <div class="offer-image" style="background-image: url('https://via.placeholder.com/400x200?text=Early+Bird')"></div>
+                                    <div class="offer-content">
+                                        <h3>Early Bird</h3>
+                                        <p>Бронируйте билеты за 3 месяца до вылета и получите скидку до 30% на все направления.</p>
+                                        <div class="offer-details">
+                                            <span class="valid-date">Действует до 31.12.2023</span>
+                                            <button class="btn-outline">Подробнее</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="offer-card">
+                                    <div class="offer-badge">Скидка</div>
+                                    <div class="offer-image" style="background-image: url('https://via.placeholder.com/400x200?text=Family+Pack')"></div>
+                                    <div class="offer-content">
+                                        <h3>Семейный пакет</h3>
+                                        <p>Специальные цены для семей с детьми. Дети до 12 лет летят со скидкой 50%.</p>
+                                        <div class="offer-details">
+                                            <span class="valid-date">Круглый год</span>
+                                            <button class="btn-outline">Подробнее</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="offer-card">
+                                    <div class="offer-badge">Новинка</div>
+                                    <div class="offer-image" style="background-image: url('https://via.placeholder.com/400x200?text=Business+Combo')"></div>
+                                    <div class="offer-content">
+                                        <h3>Business Combo</h3>
+                                        <p>Бизнес-класс + трансфер + отель 4* со скидкой 25% на популярные направления.</p>
+                                        <div class="offer-details">
+                                            <span class="valid-date">Действует до 30.09.2023</span>
+                                            <button class="btn-outline">Подробнее</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </main>
+                
+                <!-- Footer -->
+                <footer class="main-footer">
+                    <div class="container">
+                        <div class="footer-grid">
+                            <div class="footer-col">
+                                <img src="images/logo.png" alt="SkyWings" class="footer-logo" width="120" height="120">
+                                <p class="footer-slogan">Летайте с комфортом по всему миру</p>
+                                <div class="social-links">
+                                    <a href="#" aria-label="Facebook">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" aria-label="Instagram">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="currentColor" stroke-width="1.5"/>
+                                            <path d="M3 16V8C3 5.23858 5.23858 3 8 3H16C18.7614 3 21 5.23858 21 8V16C21 18.7614 18.7614 21 16 21H8C5.23858 21 3 18.7614 3 16Z" stroke="currentColor" stroke-width="1.5"/>
+                                            <path d="M17.5 6.51L17.51 6.49889" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" aria-label="Twitter">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.9572 14.8821 3.28445C14.0247 3.61171 13.2884 4.1944 12.773 4.95372C12.2575 5.71303 11.9877 6.61234 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39545C5.36074 6.60508 4.01032 5.43864 3 4C3 4 -1 13 8 17C5.94053 18.398 3.48716 19.0989 1 19C10 24 21 19 21 7.5C20.9991 7.22145 20.9723 6.94359 20.92 6.67C21.9406 5.66349 22.6608 4.39271 23 3V3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </a>
+                                    <a href="#" aria-label="YouTube">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M22.54 6.42C22.4212 5.94541 22.1793 5.51057 21.8387 5.15941C21.498 4.80824 21.0708 4.55318 20.6 4.42C18.88 4 12 4 12 4C12 4 5.12 4 3.4 4.46C2.92925 4.59318 2.50198 4.84824 2.16135 5.19941C1.82072 5.55057 1.57879 5.98541 1.46 6.46C1.14521 8.20556 0.991235 9.97631 1 11.75C0.991235 13.537 1.14521 15.3073 1.46 17.06C1.59096 17.5258 1.8383 17.9517 2.17814 18.2943C2.51798 18.6368 2.93842 18.8839 3.4 19.01C5.12 19.5 12 19.5 12 19.5C12 19.5 18.88 19.5 20.6 19.01C21.0708 18.8768 21.498 18.6218 21.8387 18.2706C22.1793 17.9194 22.4212 17.4846 22.54 17.01C22.8524 15.2676 23.0063 13.4983 23 11.725C23.0063 9.9517 22.8524 8.18236 22.54 6.44V6.42Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M9.75 15.02L15.5 11.75L9.75 8.48001V15.02Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="footer-col">
+                                <h4>Компания</h4>
+                                <ul>
+                                    <li><a href="#">О нас</a></li>
+                                    <li><a href="#">Карьера</a></li>
+                                    <li><a href="#">Пресс-центр</a></li>
+                                    <li><a href="#">Безопасность</a></li>
+                                    <li><a href="#">Экология</a></li>
+                                    <li><a href="#">Инвесторам</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="footer-col">
+                                <h4>Помощь</h4>
+                                <ul>
+                                    <li><a href="#">Центр поддержки</a></li>
+                                    <li><a href="#">Контакты</a></li>
+                                    <li><a href="#">Возврат билетов</a></li>
+                                    <li><a href="#">FAQ</a></li>
+                                    <li><a href="#">Правила перевозки</a></li>
+                                    <li><a href="#">Тарифы и правила</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="footer-col">
+                                <h4>Услуги</h4>
+                                <ul>
+                                    <li><a href="#">Бизнес-класс</a></li>
+                                    <li><a href="#">Премиум-сервис</a></li>
+                                    <li><a href="#">Перевозка животных</a></li>
+                                    <li><a href="#">Спецпитание</a></li>
+                                    <li><a href="#">Дополнительный багаж</a></li>
+                                    <li><a href="#">Аренда самолетов</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="footer-col">
+                                <h4>Контакты</h4>
+                                <address>
+                                    <div class="contact-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span>Москва, ул. Ленина, 42, офис 15</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M22 16.92V19.92C22.001 20.1984 21.9431 20.4739 21.83 20.728C21.6758 21.0681 21.4175 21.3501 21.093 21.5329C20.7685 21.7157 20.3944 21.7898 20.024 21.745C15.2826 21.1298 10.8702 16.7174 10.255 11.976C10.2102 11.6056 10.2843 11.2315 10.4671 10.907C10.6499 10.5825 10.9319 10.3242 11.272 10.17C11.5261 10.0569 11.8016 9.99904 12.08 10H15.08C15.5691 9.99748 16.0353 10.1942 16.37 10.54L18.47 12.64C18.8016 12.9793 18.9976 13.4424 19 13.93C19.0057 15.0824 18.8384 16.2288 18.505 17.33C18.3781 17.7373 18.1421 18.1009 17.8244 18.3798C17.5067 18.6587 17.1198 18.8417 16.71 18.907C16.3159 18.9701 15.9159 19.0013 15.515 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span>+7 (495) 123-45-67</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <span>info@skywings.ru</span>
+                                    </div>
+                                </address>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-bottom">
+                            <p>© 2023 SkyWings Airlines. Все права защищены.</p>
+                            <div class="footer-links">
+                                <a href="#">Политика конфиденциальности</a>
+                                <a href="#">Условия использования</a>
+                                <a href="#">Правила перевозки</a>
+                                <a href="#">Карта сайта</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background-color: #ff9500;"></div>
-                        <span>Бизнес-класс</span>
+                </footer>
+                
+                <!-- Mobile Menu -->
+                <div class="mobile-menu-overlay"></div>
+                <div class="mobile-menu">
+                    <div class="mobile-menu-header">
+                        <img src="images/logo.png" alt="SkyWings" class="mobile-menu-logo" width="40" height="40">
+                        <button class="mobile-menu-close">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
                     </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background-color: #34c759;"></div>
-                        <span>У иллюминатора</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color" style="background-color: #af52de;"></div>
-                        <span>С дополнительным местом</span>
-                    </div>
-
-                    <div class="selected-seats-details" id="selectedSeatsDetails">
-                        <h4>Выбранные места:</h4>
-                        <div class="seats-list"></div>
-                    </div>
-
-                    <button class="btn confirm-btn" id="confirmBtn">
-                        <i class="fas fa-check-circle"></i> Подтвердить выбор
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="about">
-        <div class="about-content">
-            <h2 class="section-title animate-on-scroll">О компании SkyWings</h2>
-            <p class="animate-on-scroll">SkyWings - это современная авиакомпания, которая предлагает высококачественные услуги воздушных перевозок по всему миру. Наш флот состоит из новейших самолетов, обеспечивающих максимальный комфорт и безопасность.</p>
-            <div class="stats-grid animate-on-scroll">
-                <div class="stat-card">
-                    <div class="stat-number" data-count="150">0</div>
-                    <div class="stat-label">Направлений</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" data-count="42">0</div>
-                    <div class="stat-label">Самолетов</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" data-count="5">0</div>
-                    <div class="stat-label">Миллионов пассажиров</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" data-count="98">0</div>
-                    <div class="stat-label">% пунктуальности</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contacts" class="contacts">
-        <h2 class="section-title animate-on-scroll">Контакты</h2>
-        <div class="contacts-grid">
-            <div class="contact-card animate-on-scroll">
-                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
-                <h3>Телефон</h3>
-                <p>8 (800) 555-35-35</p>
-                <p>Круглосуточная поддержка</p>
-            </div>
-            <div class="contact-card animate-on-scroll">
-                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                <h3>Email</h3>
-                <p>info@skywings.com</p>
-                <p>Ответим в течение 24 часов</p>
-            </div>
-            <div class="contact-card animate-on-scroll">
-                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                <h3>Офисы</h3>
-                <p>Москва, ул. Воздушная, 15</p>
-                <p>Санкт-Петербург, пр. Авиаторов, 42</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <img src="images/logo.png" alt="SkyWings Logo">
-                <span>SkyWings</span>
-            </div>
-            <div class="footer-links">
-                <div class="links-column">
-                    <h4>Компания</h4>
-                    <a href="#">О нас</a>
-                    <a href="#">Карьера</a>
-                    <a href="#">Пресс-центр</a>
-                    <a href="#">Блог</a>
-                </div>
-                <div class="links-column">
-                    <h4>Информация</h4>
-                    <a href="#">Правила перевозки</a>
-                    <a href="#">Тарифы</a>
-                    <a href="#">Багаж</a>
-                    <a href="#">Частые вопросы</a>
-                </div>
-                <div class="links-column">
-                    <h4>Партнерам</h4>
-                    <a href="#">Агентствам</a>
-                    <a href="#">Корпоративным клиентам</a>
-                    <a href="#">Реклама</a>
-                    <a href="#">Франшиза</a>
-                </div>
-            </div>
-            <div class="footer-social">
-                <h4>Мы в соцсетях</h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
-                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
-                </div>
-                <div class="app-download">
-                    <p>Скачайте наше приложение</p>
-                    <div class="app-buttons">
-                        <a href="#"><img src="https://via.placeholder.com/120x40?text=App+Store" alt="App Store"></a>
-                        <a href="#"><img src="https://via.placeholder.com/120x40?text=Google+Play" alt="Google Play"></a>
+                    <nav class="mobile-nav">
+                        <ul>
+                            <li><a href="#flights">Рейсы</a></li>
+                            <li><a href="#services">Услуги</a></li>
+                            <li><a href="#fleet">Наш флот</a></li>
+                            <li><a href="#about">О компании</a></li>
+                            <li><a href="#contacts">Контакты</a></li>
+                        </ul>
+                    </nav>
+                    <div class="mobile-user-actions">
+                        <button class="btn-login">Войти</button>
+                        <button class="btn-register">Регистрация</button>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2023 SkyWings Airlines. Все права защищены.</p>
-            <div class="legal-links">
-                <a href="#">Политика конфиденциальности</a>
-                <a href="#">Условия использования</a>
-                <a href="#">Cookie</a>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-</html>
+                
+                <!-- Scripts -->
+                <script src="js/main.js"></script>
+                <script src="js/booking.js"></script>
+                <script src="js/animations.js"></script>
