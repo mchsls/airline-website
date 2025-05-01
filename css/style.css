@@ -1389,7 +1389,7 @@ h1, h2, h3, h4 {
 }.form-group label {
     z-index: 10;
   }
- @media (max-width: 480px) {
+  @media (max-width: 480px) {
     .form-group label {
       font-size: 0.8rem;
     }
@@ -1400,31 +1400,7 @@ h1, h2, h3, h4 {
       font-size: 0.9rem;
     }
   
-    .input-with-icon {
-        position: relative;
-        display: flex;
-        align-items: center;
-    }
-    
-    .input-icon {
-        position: absolute;
-        left: 10px;  /* Отступ слева */
-        z-index: 2;  /* Чтобы иконка была над полем */
-    }
-    
-    #from {
-        padding-left: 35px;  /* Оставляем место для иконки */
-        width: 100%;
-    } }
-.form-group label {
-    z-index: 3; /* Выше чем у иконки (2) */
-    position: relative;
-    background: var(--surface); /* Чтобы текст не сливался с фоном */
-    padding: 0 4px;
-    left: 12px;
-    top: 8px;
-}
-/* Основные стили для полей с иконками */
+    /* Основные стили для полей с иконками */
 .input-with-icon {
     position: relative;
     width: 100%;
