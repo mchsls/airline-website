@@ -265,21 +265,15 @@
     }
   }
   
-  @media (max-width: 480px) {
-    /* Дополнительные исправления для маленьких экранов */
-    .form-group label {
-      font-size: 0.75rem;
+ @media (max-width: 480px) {
+    .input-icon {
+        left: 10px !important;
+        width: 18px !important;
+        height: 18px !important;
     }
     
-    .form-group input,
-    .form-group select {
-      padding: 10px 14px 10px 36px !important;
-      font-size: 0.85rem;
+    #from, #to {
+        padding-left: 36px !important;
+        font-size: 0.9rem;
     }
-    
-    .input-with-icon .input-icon {
-      left: 10px;
-      width: 16px;
-      height: 16px;
-    }
-  }
+}
