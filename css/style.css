@@ -1416,3 +1416,11 @@ h1, h2, h3, h4 {
         padding-left: 35px;  /* Оставляем место для иконки */
         width: 100%;
     } }
+.form-group label {
+    z-index: 3; /* Выше чем у иконки (2) */
+    position: relative;
+    background: var(--surface); /* Чтобы текст не сливался с фоном */
+    padding: 0 4px;
+    left: 12px;
+    top: 8px;
+}
