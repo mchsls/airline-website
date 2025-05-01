@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWings - Премиум авиаперевозки</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="airplane-animation"></div>
+    <div class="clouds-bg"></div>
+
+    <header id="mainHeader">
+        <div class="logo">
+            <img src="images/logo.png" alt="SkyWings Logo">
+            <span>SkyWings</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#destinations">Направления</a></li>
+                <li><a href="#services">Услуги</a></li>
+                <li><a href="#about">О нас</a></li>
+                <li><a href="#contacts">Контакты</a></li>
+                <li><a href="#" class="btn-outline"><i class="fas fa-user"></i> Войти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="animate__animated animate__fadeInDown">Откройте мир с SkyWings</h1>
+            <p class="animate__animated animate__fadeInDown animate__delay-1s">Премиальные авиаперевозки с непревзойденным комфортом и сервисом. Летайте с нами и получайте незабываемые впечатления.</p>
+            <a href="#search" class="btn animate__animated animate__fadeInUp animate__delay-2s">Найти рейс <i class="fas fa-search"></i></a>
+        </div>
+        <div class="scroll-down animate__animated animate__bounce animate__delay-3s animate__infinite">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <div class="container">
+        <form id="searchForm" class="search-form animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="form-tabs">
+                <button type="button" class="tab active">Рейсы</button>
+                <button type="button" class="tab">Гостиницы</button>
+                <button type="button" class="tab">Аренда авто</button>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="from"><i class="fas fa-plane-departure"></i> Откуда</label>
+                    <input type="text" id="from" class="form-control" placeholder="Город или аэропорт">
+                </div>
+                <div class="form-group">
+                    <label for="to"><i class="fas fa-plane-arrival"></i> Куда</label>
+                    <input type="text" id="to" class="form-control" placeholder="Город или аэропорт">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="departure"><i class="far fa-calendar-alt"></i> Туда</label>
+                    <input type="date" id="departure" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="return"><i class="far fa-calendar-alt"></i> Обратно</label>
+                    <input type="date" id="return" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="passengers"><i class="fas fa-users"></i> Пассажиры</label>
+                    <div class="passengers-select">
+                        <button type="button" class="passenger-btn minus"><i class="fas fa-minus"></i></button>
+                        <input type="number" id="passengers" class="form-control" value="1" min="1" max="9">
+                        <button type="button" class="passenger-btn plus"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="class"><i class="fas fa-chair"></i> Класс</label>
+                    <select id="class" class="form-control">
+                        <option value="economy">Эконом</option>
+                        <option value="business">Бизнес</option>
+                        <option value="first">Первый</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn search-btn">
+                <i class="fas fa-search"></i> Найти рейсы
+                <span class="loading-spinner hidden"><i class="fas fa-spinner fa-spin"></i></span>
+            </button>
+        </form>
+    </div>
+
+    <section id="destinations" class="destinations">
+        <h2 class="section-title animate-on-scroll">Популярные направления</h2>
+        <div class="destinations-grid">
+            <div class="destination-card animate-on-scroll">
+                <div class="card-badge">Хит продаж</div>
+                <img src="images/destinations/paris.jpg" alt="Paris" class="destination-img">
+                <div class="destination-info">
+                    <h3>Париж, Франция</h3>
+                    <p><i class="fas fa-plane"></i> Прямые рейсы из Москвы</p>
+                    <p><i class="fas fa-clock"></i> 3ч 45мин в пути</p>
+                    <div class="price">от 25 000 ₽</div>
+                    <button class="btn-outline">Подробнее</button>
+                </div>
+            </div>
+            <div class="destination-card animate-on-scroll">
+                <img src="images/destinations/newyork.jpg" alt="New York" class="destination-img">
+                <div class="destination-info">
+                    <h3>Нью-Йорк, США</h3>
+                    <p><i class="fas fa-plane"></i> С пересадкой в Лондоне</p>
+                    <p><i class="fas fa-clock"></i> 12ч 30мин в пути</p>
+                    <div class="price">от 45 000 ₽</div>
+                    <button class="btn-outline">Подробнее</button>
+                </div>
+            </div>
+            <div class="destination-card animate-on-scroll">
+                <div class="card-badge">Акция</div>
+                <img src="images/destinations/tokyo.jpg" alt="Tokyo" class="destination-img">
+                <div class="destination-info">
+                    <h3>Токио, Япония</h3>
+                    <p><i class="fas fa-plane"></i> Прямые рейсы из Владивостока</p>
+                    <p><i class="fas fa-clock"></i> 8ч 15мин в пути</p>
+                    <div class="price">от 38 000 ₽ <span class="old-price">42 000 ₽</span></div>
+                    <button class="btn-outline">Подробнее</button>
+                </div>
+            </div>
+            <div class="destination-card animate-on-scroll">
+                <img src="images/destinations/sydney.jpg" alt="Sydney" class="destination-img">
+                <div class="destination-info">
+                    <h3>Сидней, Австралия</h3>
+                    <p><i class="fas fa-plane"></i> С пересадкой в Сингапуре</p>
+                    <p><i class="fas fa-clock"></i> 18ч 40мин в пути</p>
+                    <div class="price">от 52 000 ₽</div>
+                    <button class="btn-outline">Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2 class="section-title animate-on-scroll">Наши услуги</h2>
+        <div class="services-grid">
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-suitcase-rolling"></i></div>
+                <h3>Дополнительный багаж</h3>
+                <p>Увеличьте норму провоза багажа для вашего комфорта</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-utensils"></i></div>
+                <h3>Специальное питание</h3>
+                <p>Выберите меню по вашему вкусу и диетическим потребностям</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-car"></i></div>
+                <h3>Трансфер из аэропорта</h3>
+                <p>Встреча в аэропорту и комфортный трансфер до отеля</p>
+            </div>
+            <div class="service-card animate-on-scroll">
+                <div class="service-icon"><i class="fas fa-bed"></i></div>
+                <h3>Отели у партнеров</h3>
+                <p>Специальные цены на отели для наших пассажиров</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="seatSelection" class="seat-selection">
+        <div class="airplane">
+            <div class="airplane-header">
+                <div class="flight-info">
+                    <h2>Рейс SW-256</h2>
+                    <p><i class="fas fa-plane-departure"></i> Москва (SVO) → <i class="fas fa-plane-arrival"></i> Париж (CDG)</p>
+                    <p><i class="far fa-calendar-alt"></i> 12 июня 2023, <i class="far fa-clock"></i> 08:45 - 11:15</p>
+                    <p><i class="fas fa-chair"></i> Класс: Эконом</p>
+                </div>
+                <div class="price-summary">
+                    <div class="total-price">25 000 ₽</div>
+                    <div class="selected-seats" id="selectedSeatsInfo">Выбрано мест: 0</div>
+                </div>
+            </div>
+            <div class="airplane-body">
+                <div class="seat-map">
+                    <h3>Выберите места</h3>
+                    <div class="seat-rows" id="seatMap">
+                        <!-- Сгенерируем места с помощью JavaScript -->
+                    </div>
+                </div>
+                <div class="seat-legend">
+                    <h3>Легенда</h3>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #e0e0e0;"></div>
+                        <span>Свободно</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #0066cc;"></div>
+                        <span>Выбрано</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #ff3b30;"></div>
+                        <span>Занято</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #ff9500;"></div>
+                        <span>Бизнес-класс</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #34c759;"></div>
+                        <span>У иллюминатора</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background-color: #af52de;"></div>
+                        <span>С дополнительным местом</span>
+                    </div>
+
+                    <div class="selected-seats-details" id="selectedSeatsDetails">
+                        <h4>Выбранные места:</h4>
+                        <div class="seats-list"></div>
+                    </div>
+
+                    <button class="btn confirm-btn" id="confirmBtn">
+                        <i class="fas fa-check-circle"></i> Подтвердить выбор
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2 class="section-title animate-on-scroll">О компании SkyWings</h2>
+            <p class="animate-on-scroll">SkyWings - это современная авиакомпания, которая предлагает высококачественные услуги воздушных перевозок по всему миру. Наш флот состоит из новейших самолетов, обеспечивающих максимальный комфорт и безопасность.</p>
+            <div class="stats-grid animate-on-scroll">
+                <div class="stat-card">
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-label">Направлений</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="42">0</div>
+                    <div class="stat-label">Самолетов</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="5">0</div>
+                    <div class="stat-label">Миллионов пассажиров</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="98">0</div>
+                    <div class="stat-label">% пунктуальности</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="contacts">
+        <h2 class="section-title animate-on-scroll">Контакты</h2>
+        <div class="contacts-grid">
+            <div class="contact-card animate-on-scroll">
+                <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                <h3>Телефон</h3>
+                <p>8 (800) 555-35-35</p>
+                <p>Круглосуточная поддержка</p>
+            </div>
+            <div class="contact-card animate-on-scroll">
+                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                <h3>Email</h3>
+                <p>info@skywings.com</p>
+                <p>Ответим в течение 24 часов</p>
+            </div>
+            <div class="contact-card animate-on-scroll">
+                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                <h3>Офисы</h3>
+                <p>Москва, ул. Воздушная, 15</p>
+                <p>Санкт-Петербург, пр. Авиаторов, 42</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo.png" alt="SkyWings Logo">
+                <span>SkyWings</span>
+            </div>
+            <div class="footer-links">
+                <div class="links-column">
+                    <h4>Компания</h4>
+                    <a href="#">О нас</a>
+                    <a href="#">Карьера</a>
+                    <a href="#">Пресс-центр</a>
+                    <a href="#">Блог</a>
+                </div>
+                <div class="links-column">
+                    <h4>Информация</h4>
+                    <a href="#">Правила перевозки</a>
+                    <a href="#">Тарифы</a>
+                    <a href="#">Багаж</a>
+                    <a href="#">Частые вопросы</a>
+                </div>
+                <div class="links-column">
+                    <h4>Партнерам</h4>
+                    <a href="#">Агентствам</a>
+                    <a href="#">Корпоративным клиентам</a>
+                    <a href="#">Реклама</a>
+                    <a href="#">Франшиза</a>
+                </div>
+            </div>
+            <div class="footer-social">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-telegram-plane"></i></a>
+                </div>
+                <div class="app-download">
+                    <p>Скачайте наше приложение</p>
+                    <div class="app-buttons">
+                        <a href="#"><img src="https://via.placeholder.com/120x40?text=App+Store" alt="App Store"></a>
+                        <a href="#"><img src="https://via.placeholder.com/120x40?text=Google+Play" alt="Google Play"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2023 SkyWings Airlines. Все права защищены.</p>
+            <div class="legal-links">
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">Условия использования</a>
+                <a href="#">Cookie</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
