@@ -141,4 +141,55 @@
         width: 100%;
         max-width: none;
     }
+}@media (max-width: 768px) {
+    /* Исправление для блока с информацией о рейсах */
+    .destination-info {
+        gap: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .info-item {
+        flex: 0 0 calc(50% - 0.5rem);
+        margin-bottom: 0.5rem;
+    }
+    
+    .info-item svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    /* Уменьшаем отступы для карточек */
+    .destination-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Корректируем footer карточки */
+    .card-footer {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .card-footer .btn-outline {
+        width: 100%;
+    }
+    
+    .rating {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Дополнительные правки для очень маленьких экранов */
+    .info-item {
+        flex: 0 0 100%;
+    }
+    
+    .destination-info {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .card-content {
+        padding: 1rem;
+    }
 }
