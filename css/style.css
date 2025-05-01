@@ -1400,36 +1400,29 @@ h1, h2, h3, h4 {
       font-size: 0.9rem;
     }
   
-    /* Основные стили для полей с иконками */
-.input-with-icon {
-    position: relative;
-    width: 100%;
-}
-
-.input-icon {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    height: 20px;
-    color: var(--text-tertiary); /* Серый цвет */
-    z-index: 2;
-    pointer-events: none; /* Чтобы клики проходили сквозь иконку */
-}
-
-#from, #to {
-    width: 100%;
-    padding: 12px 15px 12px 40px !important; /* Отступ слева под иконку */
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: var(--border-radius);
-    font-size: 1rem;
-    background-color: rgba(255, 255, 255, 0.7);
-}
-
-/* Мобильная версия */
-@media (max-width: 480px) {
-    #from, #to {
-        padding: 10px 12px 10px 38px !important;
+    .input-with-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
     }
-}
+    
+    .input-icon {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+        color: #6c757d; /* Серый цвет (как в вашем :root) */
+        z-index: 2;
+        pointer-events: none; /* Чтобы клики проходили сквозь иконку */
+    }
+    
+    #from, #to {
+        padding-left: 40px !important; /* Место для иконки */
+    }
+    @media (max-width: 480px) {
+        #from, #to {
+            padding-left: 38px !important; /* Согласуйте с основным стилем */
+        }
+    }}
