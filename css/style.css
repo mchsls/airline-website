@@ -1389,3 +1389,30 @@ h1, h2, h3, h4 {
 }.form-group label {
     z-index: 10;
   }
+ @media (max-width: 480px) {
+    .form-group label {
+      font-size: 0.8rem;
+    }
+  
+    .form-group input,
+    .form-group select {
+      padding: 10px 14px 10px 38px !important;
+      font-size: 0.9rem;
+    }
+  
+    .input-with-icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    
+    .input-icon {
+        position: absolute;
+        left: 10px;  /* Отступ слева */
+        z-index: 2;  /* Чтобы иконка была над полем */
+    }
+    
+    #from {
+        padding-left: 35px;  /* Оставляем место для иконки */
+        width: 100%;
+    } }
