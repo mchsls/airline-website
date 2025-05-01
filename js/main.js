@@ -231,24 +231,3 @@ window.addEventListener('scroll', function() {
     
     lastScrollPosition = currentScrollPosition;
 });
-// Mobile menu toggle
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const mobileMenu = document.querySelector('.mobile-menu');
-const mobileMenuOverlay = document.querySelector('.mobile-menu-overlay');
-const mobileMenuClose = document.querySelector('.mobile-menu-close');
-
-function toggleMobileMenu() {
-    mobileMenuBtn.classList.toggle('active');
-    mobileMenu.classList.toggle('active');
-    mobileMenuOverlay.classList.toggle('active');
-    document.body.classList.toggle('no-scroll');
-    
-    // Останавливаем обработку скролла при открытом меню
-    if (mobileMenu.classList.contains('active')) {
-        lastScrollPosition = window.scrollY;
-    }
-}
-
-mobileMenuBtn.addEventListener('click', toggleMobileMenu);
-mobileMenuClose.addEventListener('click', toggleMobileMenu);
-mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
