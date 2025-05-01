@@ -1386,4 +1386,6 @@ h1, h2, h3, h4 {
     width: 16px;
     height: 16px;
     flex-shrink: 0;
-}
+}.form-group label {
+    z-index: 10;
+  }
