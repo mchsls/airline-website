@@ -196,3 +196,38 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+// Header scroll behavior
+let lastScrollPosition = 0;
+const header = document.querySelector('.glass-header');
+const headerHeight = header.offsetHeight;
+const mobileMenu = document.querySelector('.mobile-menu');
+
+window.addEventListener('scroll', function() {
+    const currentScrollPosition = window.scrollY;
+    
+    // Для десктопной версии
+    if (currentScrollPosition > lastScrollPosition && currentScrollPosition > headerHeight) {
+        // Прокрутка вниз
+        header.classList.add('header-hidden');
+    } else {
+        // Прокрутка вверх
+        header.classList.remove('header-hidden');
+    }
+    
+    // Для мобильной версии - закрываем меню при прокрутке
+    if (mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        mobileMenuOverlay.classList.remove('active');
+        mobileMenuBtn.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+    }
+    
+    // Добавляем тень при прокрутке
+    if (currentScrollPosition > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+    
+    lastScrollPosition = currentScrollPosition;
+});
