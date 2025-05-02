@@ -1,3 +1,4 @@
+
 :root {
     --primary-color: #0066cc;
     --primary-light: #4d9bf5;
@@ -1400,7 +1401,7 @@ h1, h2, h3, h4 {
       font-size: 0.9rem;
     }
   
-   /* Основные стили для контейнера с иконкой */
+/* Основные стили для контейнера с иконкой */
 .input-with-icon {
     position: relative;
     width: 100%;
